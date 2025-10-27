@@ -1,0 +1,44 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* ===== LOGIN ===== */
+.bg-login {
+  background: linear-gradient(120deg, #0099ff, #6dd5fa, #ffffff);
+}
+
+.login-card {
+  border-radius: 16px;
+  max-width: 400px;
+  width: 100%;
+  background-color: #fff;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+}
+
+.nav-link.active {
+  background-color: rgba(255,255,255,0.2);
+  border-radius: 8px;
+}
+
+/* ===== CONTEÚDO ===== */
+.main-content {
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+.card-metric {
+  border: none;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.card-metric:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
