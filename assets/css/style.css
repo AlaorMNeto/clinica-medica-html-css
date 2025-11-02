@@ -3,7 +3,7 @@ body {
   background-color: #f8f9fa;
 }
 
-/* ===== LOGIN ===== */
+
 .bg-login {
   background: linear-gradient(120deg, #0099ff, #6dd5fa, #ffffff);
 }
@@ -15,7 +15,7 @@ body {
   background-color: #fff;
 }
 
-/* ===== SIDEBAR ===== */
+
 .sidebar {
   width: 250px;
   min-height: 100vh;
@@ -26,7 +26,7 @@ body {
   border-radius: 8px;
 }
 
-/* ===== CONTEÚDO ===== */
+
 .main-content {
   background-color: #fff;
   border-radius: 12px;
