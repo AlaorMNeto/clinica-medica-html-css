@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossos Médicos - Clínica Exemplo</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/medicos.css">
+</head>
+<body>
+    
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #e8f5e8;">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/img/semfundo.png" alt="Logo da Clínica" height="40">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#servicos">Serviços</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="medicos.html">Médicos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#contato">Contato</a>
+                        </li>
+                    </ul>
+                    <a href="login.html" class="btn btn-success">Login</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    
+    <main class="container my-5 pt-5">
+       
+        <div class="text-center mb-5">
+            <h1 class="display-4 fw-bold text-success">Nossos Médicos</h1>
+            <p class="lead text-muted">Conheça os profissionais que cuidam de você</p>
+        </div>
+
+        <!-- Cards dos Médicos -->
+        <div class="row g-4">
+            <!-- Médico 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card medico-card h-100">
+                    <div class="card-header-medico bg-success text-white text-center py-3">
+                        <h5 class="mb-1">Dr. João Silva</h5>
+                        <p class="mb-0">Clínico Geral</p>
+                    </div>
+                    <div class="card-body text-center p-0">
+                        <img src="assets/img/joaosilva.png" class="card-img-top" alt="Dr. João Silva" style="height: 300px; object-fit: cover;">
+                        <div class="p-3">
+                            <div class="btn-group w-100" role="group">
+                                <button class="btn btn-success" onclick="window.location.href='agendar-consulta.html'">
+                                    Agendar Consulta
+                                </button>
+                                <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalMedico1">
+                                    Ver Perfil
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Médico 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card medico-card h-100">
+                    <div class="card-header-medico bg-success text-white text-center py-3">
+                        <h5 class="mb-1">Dra. Maria Santos</h5>
+                        <p class="mb-0">Pediatra</p>
+                    </div>
+                    <div class="card-body text-center p-0">
+                        <img src="assets/img/mariasantos.png" class="card-img-top" alt="Dra. Maria Santos" style="height: 300px; object-fit: cover;">
+                        <div class="p-3">
+                            <div class="btn-group w-100" role="group">
+                                <button class="btn btn-success" onclick="window.location.href='agendar-consulta.html'">
+                                    Agendar Consulta
+                                </button>
+                                <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalMedico2">
+                                    Ver Perfil
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Médico 3 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card medico-card h-100">
+                    <div class="card-header-medico bg-success text-white text-center py-3">
+                        <h5 class="mb-1">Dr. Carlos Oliveira</h5>
+                        <p class="mb-0">Cardiologista</p>
+                    </div>
+                    <div class="card-body text-center p-0">
+                        <img src="assets/img/carlsooliveira.png" class="card-img-top" alt="Dr. Carlos Oliveira" style="height: 300px; object-fit: cover;">
+                        <div class="p-3">
+                            <div class="btn-group w-100" role="group">
+                                <button class="btn btn-success" onclick="window.location.href='agendar-consulta.html'">
+                                    Agendar Consulta
+                                </button>
+                                <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalMedico3">
+                                    Ver Perfil
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Médico 4 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card medico-card h-100">
+                    <div class="card-header-medico bg-success text-white text-center py-3">
+                        <h5 class="mb-1">Dra. Ana Costa</h5>
+                        <p class="mb-0">Ginecologista</p>
+                    </div>
+                    <div class="card-body text-center p-0">
+                        <img src="assets/img/anacosta.png" class="card-img-top" alt="Dra. Ana Costa" style="height: 300px; object-fit: cover;">
+                        <div class="p-3">
+                            <div class="btn-group w-100" role="group">
+                                <button class="btn btn-success" onclick="window.location.href='agendar-consulta.html'">
+                                    Agendar Consulta
+                                </button>
+                                <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalMedico4">
+                                    Ver Perfil
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Médico 5 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card medico-card h-100">
+                    <div class="card-header-medico bg-success text-white text-center py-3">
+                        <h5 class="mb-1">Dr. Paulo Rodrigues</h5>
+                        <p class="mb-0">Ortopedista</p>
+                    </div>
+                    <div class="card-body text-center p-0">
+                        <img src="assets/img/paulorodrigues.png" class="card-img-top" alt="Dr. Paulo Rodrigues" style="height: 300px; object-fit: cover;">
+                        <div class="p-3">
+                            <div class="btn-group w-100" role="group">
+                                <button class="btn btn-success" onclick="window.location.href='agendar-consulta.html'">
+                                    Agendar Consulta
+                                </button>
+                                <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalMedico5">
+                                    Ver Perfil
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Médico 6 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card medico-card h-100">
+                    <div class="card-header-medico bg-success text-white text-center py-3">
+                        <h5 class="mb-1">Dra. Beatriz Lima</h5>
+                        <p class="mb-0">Dermatologista</p>
+                    </div>
+                    <div class="card-body text-center p-0">
+                        <img src="assets/img/beatrizlima.png" class="card-img-top" alt="Dra. Beatriz Lima" style="height: 300px; object-fit: cover;">
+                        <div class="p-3">
+                            <div class="btn-group w-100" role="group">
+                                <button class="btn btn-success" onclick="window.location.href='agendar-consulta.html'">
+                                    Agendar Consulta
+                                </button>
+                                <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalMedico6">
+                                    Ver Perfil
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+    <!-- Modal Médico 1 -->
+    <div class="modal fade" id="modalMedico1" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content" style="max-height: 85vh;">
+                <div class="modal-body p-0" style="overflow-y: auto;">
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <img src="assets/img/joaosilva.png" class="img-fluid w-100" style="height: 500px; object-fit: cover;" alt="Dr. João Silva">
+                        </div>
+                        <div class="col-md-6 p-4 d-flex flex-column justify-content-center">
+                            <h3 class="mb-3">Dr. João Silva</h3>
+                            <p class="text-success fw-bold h5 mb-4">Clínico Geral</p>
+                            <div class="medico-info mb-4">
+                                <p class="mb-2"><strong>CRM:</strong> 12345/SP</p>
+                                <p class="mb-2"><strong>Formação:</strong> USP - Universidade de São Paulo</p>
+                                <p class="mb-2"><strong>Especialização:</strong> Medicina Interna</p>
+                                <p class="mb-2"><strong>Experiência:</strong> 15 anos</p>
+                                <p class="mb-0"><strong>Idiomas:</strong> Português, Inglês</p>
+                            </div>
+                            <p class="mb-4">Especialista em diagnóstico precoce e tratamento de doenças crônicas. Atua com abordagem humanizada e preventiva, focando na saúde integral do paciente.</p>
+                            <button class="btn btn-success btn-lg w-100 py-3" onclick="window.location.href='agendar-consulta.html'">
+                                <i class="bi bi-calendar-check me-2"></i>
+                                Agendar Consulta
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Médico 2 -->
+    <div class="modal fade" id="modalMedico2" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content" style="max-height: 85vh;">
+                <div class="modal-body p-0" style="overflow-y: auto;">
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <img src="assets/img/mariasantos.png" class="img-fluid w-100" style="height: 500px; object-fit: cover;" alt="Dra. Maria Santos">
+                        </div>
+                        <div class="col-md-6 p-4 d-flex flex-column justify-content-center">
+                            <h3 class="mb-3">Dra. Maria Santos</h3>
+                            <p class="text-success fw-bold h5 mb-4">Pediatra</p>
+                            <div class="medico-info mb-4">
+                                <p class="mb-2"><strong>CRM:</strong> 67890/SP</p>
+                                <p class="mb-2"><strong>Formação:</strong> UNIFESP</p>
+                                <p class="mb-2"><strong>Especialização:</strong> Pediatria</p>
+                                <p class="mb-2"><strong>Experiência:</strong> 10 anos</p>
+                                <p class="mb-0"><strong>Idiomas:</strong> Português, Espanhol</p>
+                            </div>
+                            <p class="mb-4">Especializada em saúde infantil e desenvolvimento. Atua com cuidados preventivos e tratamento de doenças pediátricas.</p>
+                            <button class="btn btn-success btn-lg w-100 py-3" onclick="window.location.href='agendar-consulta.html'">
+                                <i class="bi bi-calendar-check me-2"></i>
+                                Agendar Consulta
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Médico 3 -->
+    <div class="modal fade" id="modalMedico3" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content" style="max-height: 85vh;">
+                <div class="modal-body p-0" style="overflow-y: auto;">
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <img src="assets/img/carlsooliveira.png" class="img-fluid w-100" style="height: 500px; object-fit: cover;" alt="Dr. Carlos Oliveira">
+                        </div>
+                        <div class="col-md-6 p-4 d-flex flex-column justify-content-center">
+                            <h3 class="mb-3">Dr. Carlos Oliveira</h3>
+                            <p class="text-success fw-bold h5 mb-4">Cardiologista</p>
+                            <div class="medico-info mb-4">
+                                <p class="mb-2"><strong>CRM:</strong> 54321/SP</p>
+                                <p class="mb-2"><strong>Formação:</strong> FMUSP</p>
+                                <p class="mb-2"><strong>Especialização:</strong> Cardiologia</p>
+                                <p class="mb-2"><strong>Experiência:</strong> 12 anos</p>
+                                <p class="mb-0"><strong>Idiomas:</strong> Português, Inglês</p>
+                            </div>
+                            <p class="mb-4">Especialista em doenças cardiovasculares e prevenção. Atua com tecnologia de ponta para diagnósticos precisos.</p>
+                            <button class="btn btn-success btn-lg w-100 py-3" onclick="window.location.href='agendar-consulta.html'">
+                                <i class="bi bi-calendar-check me-2"></i>
+                                Agendar Consulta
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Médico 4 -->
+    <div class="modal fade" id="modalMedico4" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content" style="max-height: 85vh;">
+                <div class="modal-body p-0" style="overflow-y: auto;">
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <img src="assets/img/anacosta.png" class="img-fluid w-100" style="height: 500px; object-fit: cover;" alt="Dra. Ana Costa">
+                        </div>
+                        <div class="col-md-6 p-4 d-flex flex-column justify-content-center">
+                            <h3 class="mb-3">Dra. Ana Costa</h3>
+                            <p class="text-success fw-bold h5 mb-4">Ginecologista</p>
+                            <div class="medico-info mb-4">
+                                <p class="mb-2"><strong>CRM:</strong> 98765/SP</p>
+                                <p class="mb-2"><strong>Formação:</strong> Santa Casa</p>
+                                <p class="mb-2"><strong>Especialização:</strong> Ginecologia</p>
+                                <p class="mb-2"><strong>Experiência:</strong> 8 anos</p>
+                                <p class="mb-0"><strong>Idiomas:</strong> Português, Francês</p>
+                            </div>
+                            <p class="mb-4">Especializada em saúde feminina e cuidados preventivos. Atua com abordagem humanizada e acolhedora.</p>
+                            <button class="btn btn-success btn-lg w-100 py-3" onclick="window.location.href='agendar-consulta.html'">
+                                <i class="bi bi-calendar-check me-2"></i>
+                                Agendar Consulta
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Médico 5 -->
+    <div class="modal fade" id="modalMedico5" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content" style="max-height: 85vh;">
+                <div class="modal-body p-0" style="overflow-y: auto;">
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <img src="assets/img/paulorodrigues.png" class="img-fluid w-100" style="height: 500px; object-fit: cover;" alt="Dr. Paulo Rodrigues">
+                        </div>
+                        <div class="col-md-6 p-4 d-flex flex-column justify-content-center">
+                            <h3 class="mb-3">Dr. Paulo Rodrigues</h3>
+                            <p class="text-success fw-bold h5 mb-4">Ortopedista</p>
+                            <div class="medico-info mb-4">
+                                <p class="mb-2"><strong>CRM:</strong> 13579/SP</p>
+                                <p class="mb-2"><strong>Formação:</strong> UNICAMP</p>
+                                <p class="mb-2"><strong>Especialização:</strong> Ortopedia</p>
+                                <p class="mb-2"><strong>Experiência:</strong> 14 anos</p>
+                                <p class="mb-0"><strong>Idiomas:</strong> Português, Inglês</p>
+                            </div>
+                            <p class="mb-4">Especialista em traumas e doenças do sistema musculoesquelético. Atua com técnicas minimamente invasivas.</p>
+                            <button class="btn btn-success btn-lg w-100 py-3" onclick="window.location.href='agendar-consulta.html'">
+                                <i class="bi bi-calendar-check me-2"></i>
+                                Agendar Consulta
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Médico 6 -->
+    <div class="modal fade" id="modalMedico6" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content" style="max-height: 85vh;">
+                <div class="modal-body p-0" style="overflow-y: auto;">
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <img src="assets/img/beatrizlima.png" class="img-fluid w-100" style="height: 500px; object-fit: cover;" alt="Dra. Beatriz Lima">
+                        </div>
+                        <div class="col-md-6 p-4 d-flex flex-column justify-content-center">
+                            <h3 class="mb-3">Dra. Beatriz Lima</h3>
+                            <p class="text-success fw-bold h5 mb-4">Dermatologista</p>
+                            <div class="medico-info mb-4">
+                                <p class="mb-2"><strong>CRM:</strong> 24680/SP</p>
+                                <p class="mb-2"><strong>Formação:</strong> USP</p>
+                                <p class="mb-2"><strong>Especialização:</strong> Dermatologia</p>
+                                <p class="mb-2"><strong>Experiência:</strong> 9 anos</p>
+                                <p class="mb-0"><strong>Idiomas:</strong> Português, Inglês</p>
+                            </div>
+                            <p class="mb-4">Especializada em doenças de pele, cabelos e unhas. Atua com tratamentos estéticos e clínicos.</p>
+                            <button class="btn btn-success btn-lg w-100 py-3" onclick="window.location.href='agendar-consulta.html'">
+                                <i class="bi bi-calendar-check me-2"></i>
+                                Agendar Consulta
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" style="background-color: #083111;">
+        <div class="container">
+            <div class="row align-items-center py-4">
+                <div class="col-md-3 text-center text-md-start mb-3 mb-md-0">
+                    <img src="assets/img/semfundo.png" alt="Logo Clínica" height="80">
+                </div>
+                <div class="col-md-6 text-center mb-3 mb-md-0">
+                    <p class="text-white mb-2">© 2025 Clínica Exemplo. Todos os direitos reservados.</p>
+                    <a href="#" class="text-white-50 text-decoration-none">Política de privacidade</a>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/medicos.js"></script>
+</body>
+</html>
