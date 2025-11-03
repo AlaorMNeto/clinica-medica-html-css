@@ -55,66 +55,104 @@
                 <div class="card shadow-sm border-0">
                     <div class="card-body p-4">
                         <form id="formAgendamento">
-                            <!-- Especialidade -->
+                            <!-- Dados Pessoais -->
                             <div class="mb-4">
-                                <label for="especialidade" class="form-label fw-semibold">
-                                    <i class="bi bi-heart-pulse me-2 text-success"></i>
-                                    Especialidade
-                                </label>
-                                <select class="form-select form-select-lg" id="especialidade" required>
-                                    <option value="" selected disabled>Selecione uma especialidade</option>
-                                    <option value="clinico-geral">Clínico Geral</option>
-                                    <option value="pediatria">Pediatria</option>
-                                    <option value="cardiologia">Cardiologia</option>
-                                    <option value="ginecologia">Ginecologia</option>
-                                    <option value="ortopedia">Ortopedia</option>
-                                    <option value="dermatologia">Dermatologia</option>
-                                </select>
+                                <h5 class="text-success mb-3">
+                                    <i class="bi bi-person me-2"></i>
+                                    Dados Pessoais
+                                </h5>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="nome" class="form-label fw-semibold">Nome Completo</label>
+                                        <input type="text" class="form-control" id="nome" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="idade" class="form-label fw-semibold">Idade</label>
+                                        <input type="number" class="form-control" id="idade" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="telefone" class="form-label fw-semibold">Telefone</label>
+                                        <input type="tel" class="form-control" id="telefone" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="email" class="form-label fw-semibold">E-mail</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                </div>
                             </div>
 
-                            <!-- Médico -->
+                            <!-- Dados da Consulta -->
                             <div class="mb-4">
-                                <label for="medico" class="form-label fw-semibold">
-                                    <i class="bi bi-person-badge me-2 text-success"></i>
-                                    Médico
-                                </label>
-                                <select class="form-select form-select-lg" id="medico" required>
-                                    <option value="" selected disabled>Selecione um médico</option>
-                                    <option value="dr-joao">Dr. João Silva - Clínico Geral</option>
-                                    <option value="dra-maria">Dra. Maria Santos - Pediatria</option>
-                                    <option value="dr-carlos">Dr. Carlos Oliveira - Cardiologia</option>
-                                    <option value="dra-ana">Dra. Ana Costa - Ginecologia</option>
-                                    <option value="dr-paulo">Dr. Paulo Rodrigues - Ortopedia</option>
-                                    <option value="dra-beatriz">Dra. Beatriz Lima - Dermatologia</option>
-                                </select>
-                            </div>
+                                <h5 class="text-success mb-3">
+                                    <i class="bi bi-calendar-check me-2"></i>
+                                    Dados da Consulta
+                                </h5>
 
-                            <!-- Data -->
-                            <div class="mb-4">
-                                <label for="data" class="form-label fw-semibold">
-                                    <i class="bi bi-calendar3 me-2 text-success"></i>
-                                    Data da Consulta
-                                </label>
-                                <input type="date" class="form-control form-control-lg" id="data" min="" required>
-                            </div>
+                                <!-- Especialidade -->
+                                <div class="mb-3">
+                                    <label for="especialidade" class="form-label fw-semibold">
+                                        <i class="bi bi-heart-pulse me-2 text-success"></i>
+                                        Especialidade
+                                    </label>
+                                    <select class="form-select" id="especialidade" required>
+                                        <option value="" selected disabled>Selecione uma especialidade</option>
+                                        <option value="clinico-geral">Clínico Geral</option>
+                                        <option value="pediatria">Pediatria</option>
+                                        <option value="cardiologia">Cardiologia</option>
+                                        <option value="ginecologia">Ginecologia</option>
+                                        <option value="ortopedia">Ortopedia</option>
+                                        <option value="dermatologia">Dermatologia</option>
+                                    </select>
+                                </div>
 
-                            <!-- Horário -->
-                            <div class="mb-4">
-                                <label for="horario" class="form-label fw-semibold">
-                                    <i class="bi bi-clock me-2 text-success"></i>
-                                    Horário
-                                </label>
-                                <select class="form-select form-select-lg" id="horario" required>
-                                    <option value="" selected disabled>Selecione um horário</option>
-                                    <option value="08:00">08:00</option>
-                                    <option value="09:00">09:00</option>
-                                    <option value="10:00">10:00</option>
-                                    <option value="11:00">11:00</option>
-                                    <option value="14:00">14:00</option>
-                                    <option value="15:00">15:00</option>
-                                    <option value="16:00">16:00</option>
-                                    <option value="17:00">17:00</option>
-                                </select>
+                                <!-- Médico -->
+                                <div class="mb-3">
+                                    <label for="medico" class="form-label fw-semibold">
+                                        <i class="bi bi-person-badge me-2 text-success"></i>
+                                        Médico
+                                    </label>
+                                    <select class="form-select" id="medico" required>
+                                        <option value="" selected disabled>Selecione um médico</option>
+                                        <option value="dr-joao">Dr. João Silva - Clínico Geral</option>
+                                        <option value="dra-maria">Dra. Maria Santos - Pediatria</option>
+                                        <option value="dr-carlos">Dr. Carlos Oliveira - Cardiologia</option>
+                                        <option value="dra-ana">Dra. Ana Costa - Ginecologia</option>
+                                        <option value="dr-paulo">Dr. Paulo Rodrigues - Ortopedia</option>
+                                        <option value="dra-beatriz">Dra. Beatriz Lima - Dermatologia</option>
+                                    </select>
+                                </div>
+
+                                <!-- Data -->
+                                <div class="mb-3">
+                                    <label for="data" class="form-label fw-semibold">
+                                        <i class="bi bi-calendar3 me-2 text-success"></i>
+                                        Data da Consulta
+                                    </label>
+                                    <input type="date" class="form-control" id="data" min="" required>
+                                </div>
+
+                                <!-- Horário -->
+                                <div class="mb-3">
+                                    <label for="horario" class="form-label fw-semibold">
+                                        <i class="bi bi-clock me-2 text-success"></i>
+                                        Horário
+                                    </label>
+                                    <select class="form-select" id="horario" required>
+                                        <option value="" selected disabled>Selecione um horário</option>
+                                        <option value="08:00">08:00</option>
+                                        <option value="09:00">09:00</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="14:00">14:00</option>
+                                        <option value="15:00">15:00</option>
+                                        <option value="16:00">16:00</option>
+                                        <option value="17:00">17:00</option>
+                                    </select>
+                                </div>
                             </div>
 
                             <!-- Observações -->
