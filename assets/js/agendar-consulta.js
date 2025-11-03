@@ -34,6 +34,12 @@ document.addEventListener('DOMContentLoaded', function() {
         campo.addEventListener('blur', function() {
             validarCampo(this);
         });
+        
+        campo.addEventListener('input', function() {
+            if (this.classList.contains('is-invalid')) {
+                validarCampo(this);
+            }
+        });
     });
 });
 
@@ -67,17 +73,39 @@ function validarFormulario() {
     return valido;
 }
 
+function formatarTelefone(telefone) {
+    // Remove tudo que não é número
+    const numeros = telefone.replace(/\D/g, '');
+    
+    // Formatação básica para telefone brasileiro
+    if (numeros.length === 11) {
+        return numeros.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+    } else if (numeros.length === 10) {
+        return numeros.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
+    }
+    
+    return telefone;
+}
+
 function agendarConsulta() {
-    // Simular agendamento
+    // Coletar dados do formulário
     const formData = {
+        nome: document.getElementById('nome').value.trim(),
+        idade: document.getElementById('idade').value,
+        telefone: formatarTelefone(document.getElementById('telefone').value),
+        email: document.getElementById('email').value.trim(),
         especialidade: document.getElementById('especialidade').value,
         medico: document.getElementById('medico').value,
         data: document.getElementById('data').value,
         horario: document.getElementById('horario').value,
-        observacoes: document.getElementById('observacoes').value
+        observacoes: document.getElementById('observacoes').value.trim(),
+        dataAgendamento: new Date().toISOString()
     };
 
     console.log('Dados do agendamento:', formData);
+    
+    // Salvar paciente no localStorage
+    salvarPaciente(formData);
     
     // Mostrar mensagem de sucesso
     alert('✅ Consulta agendada com sucesso!\n\nEm breve entraremos em contato para confirmação.');
@@ -86,4 +114,41 @@ function agendarConsulta() {
     setTimeout(() => {
         window.location.href = 'index.html';
     }, 2000);
+}
+
+function salvarPaciente(dados) {
+    try {
+        // Recuperar pacientes existentes do localStorage
+        let pacientes = JSON.parse(localStorage.getItem('pacientes')) || [];
+        
+        // Verificar se o paciente já existe (por telefone ou email)
+        const pacienteExistente = pacientes.find(p => 
+            p.telefone === dados.telefone || p.email === dados.email
+        );
+        
+        if (!pacienteExistente) {
+            // Adicionar novo paciente
+            pacientes.push({
+                nome: dados.nome,
+                idade: dados.idade,
+                telefone: dados.telefone,
+                email: dados.email,
+                especialidade: dados.especialidade,
+                medico: dados.medico,
+                dataConsulta: dados.data,
+                horarioConsulta: dados.horario,
+                observacoes: dados.observacoes,
+                dataCadastro: dados.dataAgendamento
+            });
+            
+            // Salvar no localStorage
+            localStorage.setItem('pacientes', JSON.stringify(pacientes));
+            console.log('Paciente salvo com sucesso!');
+        } else {
+            console.log('Paciente já cadastrado');
+        }
+        
+    } catch (error) {
+        console.error('Erro ao salvar paciente:', error);
+    }
 }

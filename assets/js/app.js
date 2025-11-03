@@ -33,17 +33,32 @@ $(document).ready(function() {
 
   function renderPacientes() {
     const busca = $("#buscaPaciente").val().toLowerCase();
-    const filtrados = pacientes.filter(p => p.nome.toLowerCase().includes(busca));
+    const filtrados = pacientes.filter(p => 
+      p.nome.toLowerCase().includes(busca) ||
+      (p.email && p.email.toLowerCase().includes(busca)) ||
+      (p.telefone && p.telefone.toLowerCase().includes(busca))
+    );
 
     $("#tabelaPacientes").html(
       filtrados.map((p, i) => `
         <tr>
-          <td>${p.nome}</td>
+          <td>
+            <strong>${p.nome}</strong>
+            ${p.email ? `<br><small class="text-muted">${p.email}</small>` : ''}
+          </td>
           <td>${p.idade}</td>
           <td>${p.telefone}</td>
           <td>
-            <button class="btn btn-sm btn-primary editar" data-index="${i}">Editar</button>
-            <button class="btn btn-sm btn-danger excluir" data-index="${i}">Excluir</button>
+            ${p.especialidade ? `<span class="badge bg-info">${p.especialidade}</span><br>` : ''}
+            ${p.dataConsulta ? `<small>${formatarData(p.dataConsulta)} ${p.horarioConsulta || ''}</small>` : ''}
+          </td>
+          <td>
+            <button class="btn btn-sm btn-primary editar" data-index="${i}" title="Editar">
+              <i class="bi bi-pencil"></i>
+            </button>
+            <button class="btn btn-sm btn-danger excluir" data-index="${i}" title="Excluir">
+              <i class="bi bi-trash"></i>
+            </button>
           </td>
         </tr>
       `).join("")
@@ -53,22 +68,43 @@ $(document).ready(function() {
     localStorage.setItem("pacientes", JSON.stringify(pacientes));
   }
 
+  function formatarData(data) {
+    if (!data) return '';
+    const date = new Date(data + 'T00:00:00');
+    return date.toLocaleDateString('pt-BR');
+  }
+
   // Adicionar paciente
   $("#addPacienteBtn").click(function() {
     $("#pacienteIndex").val("");
     $("#formPaciente")[0].reset();
+    $("#modalPaciente .modal-title").text("Adicionar Paciente");
     $("#modalPaciente").modal("show");
   });
 
   $("#formPaciente").submit(function(e) {
     e.preventDefault();
-    const nome = $("#nomePaciente").val();
+    const nome = $("#nomePaciente").val().trim();
     const idade = $("#idadePaciente").val();
-    const telefone = $("#telefonePaciente").val();
+    const telefone = $("#telefonePaciente").val().trim();
+    const email = $("#emailPaciente").val().trim();
+    const especialidade = $("#especialidadePaciente").val();
     const index = $("#pacienteIndex").val();
 
-    if (index) pacientes[index] = { nome, idade, telefone };
-    else pacientes.push({ nome, idade, telefone });
+    const pacienteData = { 
+      nome, 
+      idade, 
+      telefone,
+      email: email || '',
+      especialidade: especialidade || '',
+      dataCadastro: index ? pacientes[index].dataCadastro : new Date().toISOString()
+    };
+
+    if (index) {
+      pacientes[index] = { ...pacientes[index], ...pacienteData };
+    } else {
+      pacientes.push(pacienteData);
+    }
 
     $("#modalPaciente").modal("hide");
     renderPacientes();
@@ -81,13 +117,18 @@ $(document).ready(function() {
     $("#nomePaciente").val(p.nome);
     $("#idadePaciente").val(p.idade);
     $("#telefonePaciente").val(p.telefone);
+    $("#emailPaciente").val(p.email || '');
+    $("#especialidadePaciente").val(p.especialidade || '');
+    $("#modalPaciente .modal-title").text("Editar Paciente");
     $("#modalPaciente").modal("show");
   });
 
   $(document).on("click", ".excluir", function() {
     const index = $(this).data("index");
-    pacientes.splice(index, 1);
-    renderPacientes();
+    if (confirm("Tem certeza que deseja excluir este paciente?")) {
+      pacientes.splice(index, 1);
+      renderPacientes();
+    }
   });
 
   $("#buscaPaciente").on("keyup", renderPacientes);
